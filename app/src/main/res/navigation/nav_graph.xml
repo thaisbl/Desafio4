@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.thaisbl.desafio4.user.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.thaisbl.desafio4.user.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="userFromRegister"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.thaisbl.desafio4.user.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.thaisbl.desafio4.home.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editGameFragment"
+            app:destination="@id/editGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailFragment"
+        android:name="com.thaisbl.desafio4.home.detail.GameDetailFragment"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail">
+        <action
+            android:id="@+id/action_gameDetailFragment_to_editGameFragment"
+            app:destination="@id/editGameFragment" />
+        <argument
+            android:name="gameUid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editGameFragment"
+        android:name="com.thaisbl.desafio4.home.edit.EditGameFragment"
+        android:label="fragment_edit_game"
+        tools:layout="@layout/fragment_edit_game">
+        <argument
+            android:name="game"
+            android:defaultValue="@null"
+            app:argType="com.thaisbl.desafio4.home.Game"
+            app:nullable="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment" />
+</navigation>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gainsboro"
+    tools:context=".home.detail.GameDetailFragment">
+
+    <ImageView
+        android:id="@+id/iv_game_cover"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@string/game_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/red" />
+
+    <ImageView
+        android:id="@+id/iv_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_game_title_appbar"
+        style="@style/Games.Detail.TitleAppBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/iv_game_cover"
+        tools:text="Game Name"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+    <TextView
+        android:id="@+id/tv_game_title"
+        style="@style/Games.Detail.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_game_cover"
+        tools:text="Game Name" />
+
+    <TextView
+        android:id="@+id/tv_game_release_year"
+        style="@style/Games.Detail.Subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_game_title"
+        tools:text="Release Year: 1999" />
+
+    <TextView
+        android:id="@+id/tv_game_description"
+        style="@style/Games.Detail.Text"
+        android:paddingTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_game_release_year"
+        tools:text="Lorem Ipsum..." />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_edit_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@color/red"
+        android:contentDescription="@string/edit_game"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_game_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_game_cover"
+        app:srcCompat="@drawable/ic_edit"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
