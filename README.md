@@ -1,4 +1,4 @@
-# DigitalHouseDesafio4
+# DigitalHouseDesafio4 - Firebase
 
 Espera-se que o aluno consiga executar as seguintes atividades seguindo layout pré-estabelecido.
 
